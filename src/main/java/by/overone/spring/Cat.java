@@ -1,14 +1,16 @@
 package by.overone.spring;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
 import java.util.Objects;
-
+@Component ("myCat")
 public class Cat implements Pet{
+    @Value("${Cat.name}")
     private String name;
-
     public Cat() {
 
     }
-
     public Cat(String name) {
         this.name = name;
     }

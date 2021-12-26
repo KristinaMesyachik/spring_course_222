@@ -1,8 +1,14 @@
 package by.overone.spring;
 
-import java.util.Objects;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
+import java.util.Objects;
+@Component("myDog")
+@Scope("singleton")
 public class Dog implements Pet{
+    @Value("${Dog.name}")
     private String name;
     public Dog() {
     }
